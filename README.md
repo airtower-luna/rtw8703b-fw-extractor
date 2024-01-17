@@ -33,9 +33,9 @@ gcc -fPIC -DCONFIG_RTL8703B -c -o rtw8703b_fw.o rtw8703b_fw.c
 gcc -fPIC -DCONFIG_RTL8703B -c -o hal8703b_fw.o hal8703b_fw.c
 gcc -DCONFIG_RTL8703B -o rtw8703b_fw rtw8703b_fw.o hal8703b_fw.o
 ./rtw8703b_fw
-rtw8703b_fw_ap.bin: 19994 bytes
-rtw8703b_fw_nic.bin: 20290 bytes
-rtw8703b_fw_wowlan.bin: 23074 bytes
+rtw8703b_ap_fw.bin: 19994 bytes
+rtw8703b_fw.bin: 20290 bytes
+rtw8703b_wow_fw.bin: 23074 bytes
 ```
 
 The resulting `*.bin` files are the firmware binaries. For use with

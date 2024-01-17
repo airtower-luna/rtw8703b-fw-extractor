@@ -30,10 +30,10 @@ int write_fw_file(const char *name, const u8 *data, const u32 len)
 }
 
 
-#define WRITE_FW_CHECKED(KIND)					\
+#define WRITE_FW_CHECKED(KIND, NAME)				\
 	do {							\
 		int ret = write_fw_file(			\
-			"rtw8703b_fw_" #KIND ".bin",		\
+			NAME,					\
 			array_mp_8703b_fw_ ## KIND,		\
 			array_length_mp_8703b_fw_ ## KIND);	\
 		if (ret	!= 0)					\
@@ -43,9 +43,9 @@ int write_fw_file(const char *name, const u8 *data, const u32 len)
 
 int main()
 {
-	WRITE_FW_CHECKED(ap);
-	WRITE_FW_CHECKED(nic);
-	WRITE_FW_CHECKED(wowlan);
+	WRITE_FW_CHECKED(ap, "rtw8703b_ap_fw.bin");
+	WRITE_FW_CHECKED(nic, "rtw8703b_fw.bin");
+	WRITE_FW_CHECKED(wowlan, "rtw8703b_wow_fw.bin");
 
 	return 0;
 }

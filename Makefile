@@ -1,9 +1,9 @@
 # SPDX-License-Identifier: GPL-2.0
 # Copyright Fiona Klute <fiona.klute@gmx.de>
 
-firmware_files = rtw8703b_fw_ap.bin \
-	rtw8703b_fw_nic.bin \
-	rtw8703b_fw_wowlan.bin
+firmware_files = rtw8703b_ap_fw.bin \
+	rtw8703b_fw.bin \
+	rtw8703b_wow_fw.bin
 
 all: $(firmware_files)
 
