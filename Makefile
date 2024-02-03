@@ -1,11 +1,16 @@
 # SPDX-License-Identifier: GPL-2.0
 # Copyright Fiona Klute <fiona.klute@gmx.de>
 
-firmware_files = rtw8703b_ap_fw.bin \
-	rtw8703b_fw.bin \
+firmware_install = rtw8703b_fw.bin \
 	rtw8703b_wow_fw.bin
+firmware_files = rtw8703b_ap_fw.bin \
+	$(firmware_install)
 
 all: $(firmware_files)
+
+install: $(firmware_install)
+	sudo mkdir -p /lib/firmware/rtw88/
+	sudo install -m 644 $(firmware_install) /lib/firmware/rtw88/
 
 %.o: %.c
 	gcc -fPIC -DCONFIG_RTL8703B -c -o $@ $<

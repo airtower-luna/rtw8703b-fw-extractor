@@ -41,4 +41,7 @@ rtw8703b_wow_fw.bin: 23074 bytes
 The resulting `*.bin` files are the firmware binaries. For use with
 [my experimental `rtw88_8703b`/`rtw88_8723cs`
 driver](https://github.com/airtower-luna/linux/tree/rtw88_8723cs/drivers/net/wireless/realtek/rtw88)
-place them in `/lib/firmware/rtw88/`.
+place `rtw8703b_fw.bin` and `rtw8703b_wow_fw.bin` in
+`/lib/firmware/rtw88/`. If you have this repository on the system
+where you want to use the driver, you can also run `make install`
+(requires sudo permission).
